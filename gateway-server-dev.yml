@@ -1,20 +1,19 @@
 server:
   port: 8080
-  
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-      
+
 spring:
   cloud:
     gateway:
       routes:
-        - id: moviesRoute
-          uri: http://localhost:8082/
+        - id: movieRoute 
+          uri: http://localhost:8083/ 
           predicates: 
-            - Path=/movies/**
-        - id: catalogsRoute 
-          uri: http://localhost:8084/ 
-          predicates:
-            - Path=/catalogs/**
+            - Path=/movies/
+        - id: catalogRoute
+          uri: http://localhost:8084/  
+          predicates: 
+            - Path=/catalog/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
