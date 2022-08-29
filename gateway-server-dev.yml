@@ -8,11 +8,11 @@ spring:
         - id: movieRoute 
           uri: http://localhost:8082/ 
           predicates: 
-            - Path=/movies/
+            - Path=/movies/**
         - id: catalogRoute
           uri: http://localhost:8084/  
           predicates: 
-            - Path=/catalog/
+            - Path=/catalog/**
 eureka:
   client:
     service-url:
