@@ -6,7 +6,7 @@ spring:
     gateway:
       routes:
         - id: movieRoute 
-          uri: http://localhost:8083/ 
+          uri: http://localhost:8082/ 
           predicates: 
             - Path=/movies/
         - id: catalogRoute
